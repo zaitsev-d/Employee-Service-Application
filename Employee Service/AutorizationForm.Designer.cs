@@ -36,15 +36,15 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonAutorization = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.codeField = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.peselField = new System.Windows.Forms.TextBox();
+            this.surnameField = new System.Windows.Forms.TextBox();
+            this.nameField = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -67,15 +67,15 @@
             this.panel1.Controls.Add(this.pictureBox4);
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.buttonAutorization);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.codeField);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.peselField);
+            this.panel1.Controls.Add(this.surnameField);
+            this.panel1.Controls.Add(this.nameField);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -116,7 +116,7 @@
             // 
             // pictureBox5
             // 
-            this.pictureBox5.Image = global::Employee_Service.Properties.Resources.key;
+            this.pictureBox5.Image = global::Service_Application.Properties.Resources.key;
             this.pictureBox5.Location = new System.Drawing.Point(17, 317);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(25, 24);
@@ -126,7 +126,7 @@
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Image = global::Employee_Service.Properties.Resources.folder;
+            this.pictureBox4.Image = global::Service_Application.Properties.Resources.folder;
             this.pictureBox4.Location = new System.Drawing.Point(18, 262);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(25, 24);
@@ -136,7 +136,7 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::Employee_Service.Properties.Resources.user;
+            this.pictureBox3.Image = global::Service_Application.Properties.Resources.user;
             this.pictureBox3.Location = new System.Drawing.Point(18, 192);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(25, 24);
@@ -146,7 +146,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::Employee_Service.Properties.Resources.user;
+            this.pictureBox2.Image = global::Service_Application.Properties.Resources.user;
             this.pictureBox2.Location = new System.Drawing.Point(18, 119);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(25, 24);
@@ -154,16 +154,17 @@
             this.pictureBox2.TabIndex = 9;
             this.pictureBox2.TabStop = false;
             // 
-            // button1
+            // buttonAutorization
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(27, 394);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(301, 36);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Autorization";
-            this.button1.UseVisualStyleBackColor = false;
+            this.buttonAutorization.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.buttonAutorization.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAutorization.Location = new System.Drawing.Point(27, 394);
+            this.buttonAutorization.Name = "buttonAutorization";
+            this.buttonAutorization.Size = new System.Drawing.Size(301, 36);
+            this.buttonAutorization.TabIndex = 8;
+            this.buttonAutorization.Text = "Autorization";
+            this.buttonAutorization.UseVisualStyleBackColor = false;
+            this.buttonAutorization.Click += new System.EventHandler(this.buttonAutorization_Click);
             // 
             // label5
             // 
@@ -214,29 +215,29 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Name:";
             // 
-            // textBox3
+            // peselField
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(53, 262);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(275, 24);
-            this.textBox3.TabIndex = 3;
+            this.peselField.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.peselField.Location = new System.Drawing.Point(53, 262);
+            this.peselField.Name = "peselField";
+            this.peselField.Size = new System.Drawing.Size(275, 24);
+            this.peselField.TabIndex = 3;
             // 
-            // textBox2
+            // surnameField
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(53, 192);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(275, 24);
-            this.textBox2.TabIndex = 2;
+            this.surnameField.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.surnameField.Location = new System.Drawing.Point(53, 192);
+            this.surnameField.Name = "surnameField";
+            this.surnameField.Size = new System.Drawing.Size(275, 24);
+            this.surnameField.TabIndex = 2;
             // 
-            // textBox1
+            // nameField
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(53, 119);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(275, 24);
-            this.textBox1.TabIndex = 1;
+            this.nameField.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameField.Location = new System.Drawing.Point(53, 119);
+            this.nameField.Name = "nameField";
+            this.nameField.Size = new System.Drawing.Size(275, 24);
+            this.nameField.TabIndex = 1;
             // 
             // panel2
             // 
@@ -251,7 +252,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Employee_Service.Properties.Resources.coffee;
+            this.pictureBox1.Image = global::Service_Application.Properties.Resources.coffee;
             this.pictureBox1.Location = new System.Drawing.Point(14, 15);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(54, 40);
@@ -265,7 +266,7 @@
             this.label1.Font = new System.Drawing.Font("Noto Sans Cond", 16.2F, System.Drawing.FontStyle.Underline);
             this.label1.Location = new System.Drawing.Point(66, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(258, 37);
+            this.label1.Size = new System.Drawing.Size(271, 38);
             this.label1.TabIndex = 0;
             this.label1.Text = "Employee Temp Service";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -304,12 +305,12 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox peselField;
+        private System.Windows.Forms.TextBox surnameField;
+        private System.Windows.Forms.TextBox nameField;
         private System.Windows.Forms.TextBox codeField;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonAutorization;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;

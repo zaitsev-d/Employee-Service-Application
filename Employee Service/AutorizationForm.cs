@@ -1,4 +1,5 @@
-﻿using Service_Application.Connection;
+﻿using Service_Application;
+using Service_Application.Connection;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -49,6 +50,19 @@ namespace Employee_Service
                 MessageBox.Show("Collaborator is conected");
             }
             else MessageBox.Show("Collaborator is not conected");
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            RegistrationForm registrationForm = new RegistrationForm();
+            registrationForm.Show();
+
+            this.Hide();
+        }
+
+        private void AutorizationForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -131,6 +131,7 @@
             // 
             this.surnameField.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.surnameField.Location = new System.Drawing.Point(373, 38);
+            this.surnameField.MaxLength = 30;
             this.surnameField.Multiline = true;
             this.surnameField.Name = "surnameField";
             this.surnameField.Size = new System.Drawing.Size(314, 27);
@@ -156,6 +157,7 @@
             this.buttonGenerate.TabIndex = 24;
             this.buttonGenerate.Text = "Generate";
             this.buttonGenerate.UseVisualStyleBackColor = true;
+            this.buttonGenerate.Click += new System.EventHandler(this.buttonGenerate_Click);
             // 
             // label11
             // 
@@ -171,6 +173,7 @@
             // 
             this.phoneNumberField.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.phoneNumberField.Location = new System.Drawing.Point(172, 283);
+            this.phoneNumberField.MaxLength = 12;
             this.phoneNumberField.Multiline = true;
             this.phoneNumberField.Name = "phoneNumberField";
             this.phoneNumberField.Size = new System.Drawing.Size(151, 27);
@@ -190,6 +193,7 @@
             // 
             this.postcodeField.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.postcodeField.Location = new System.Drawing.Point(467, 282);
+            this.postcodeField.MaxLength = 6;
             this.postcodeField.Multiline = true;
             this.postcodeField.Name = "postcodeField";
             this.postcodeField.Size = new System.Drawing.Size(79, 37);
@@ -209,6 +213,7 @@
             // 
             this.cityField.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cityField.Location = new System.Drawing.Point(373, 236);
+            this.cityField.MaxLength = 30;
             this.cityField.Multiline = true;
             this.cityField.Name = "cityField";
             this.cityField.Size = new System.Drawing.Size(314, 27);
@@ -228,6 +233,7 @@
             // 
             this.countryField.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.countryField.Location = new System.Drawing.Point(13, 236);
+            this.countryField.MaxLength = 30;
             this.countryField.Multiline = true;
             this.countryField.Name = "countryField";
             this.countryField.Size = new System.Drawing.Size(310, 27);
@@ -239,8 +245,8 @@
             this.comboBoxGender.FormattingEnabled = true;
             this.comboBoxGender.ItemHeight = 22;
             this.comboBoxGender.Items.AddRange(new object[] {
-            "Male (M)",
-            "Female (F)"});
+            "Male",
+            "Female"});
             this.comboBoxGender.Location = new System.Drawing.Point(459, 86);
             this.comboBoxGender.Name = "comboBoxGender";
             this.comboBoxGender.Size = new System.Drawing.Size(228, 30);
@@ -270,20 +276,22 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(11, 92);
+            this.label1.Location = new System.Drawing.Point(11, 86);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 18);
+            this.label1.Size = new System.Drawing.Size(122, 36);
             this.label1.TabIndex = 10;
-            this.label1.Text = "Birth Date:";
+            this.label1.Text = "Birth Date:\r\n(YYYY.MM.DD)";
             // 
             // birthDateField
             // 
             this.birthDateField.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.birthDateField.Location = new System.Drawing.Point(114, 87);
+            this.birthDateField.Location = new System.Drawing.Point(137, 86);
+            this.birthDateField.MaxLength = 10;
             this.birthDateField.Multiline = true;
             this.birthDateField.Name = "birthDateField";
             this.birthDateField.Size = new System.Drawing.Size(107, 27);
             this.birthDateField.TabIndex = 9;
+            this.birthDateField.Validating += new System.ComponentModel.CancelEventHandler(this.birthDateField_Validating);
             // 
             // buttonRegistration
             // 
@@ -295,6 +303,7 @@
             this.buttonRegistration.TabIndex = 8;
             this.buttonRegistration.Text = "Registration";
             this.buttonRegistration.UseVisualStyleBackColor = false;
+            this.buttonRegistration.Click += new System.EventHandler(this.buttonRegistration_Click);
             // 
             // label5
             // 
@@ -340,6 +349,7 @@
             // 
             this.peselField.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.peselField.Location = new System.Drawing.Point(99, 154);
+            this.peselField.MaxLength = 11;
             this.peselField.Multiline = true;
             this.peselField.Name = "peselField";
             this.peselField.Size = new System.Drawing.Size(120, 30);
@@ -349,6 +359,7 @@
             // 
             this.nameField.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameField.Location = new System.Drawing.Point(12, 37);
+            this.nameField.MaxLength = 30;
             this.nameField.Multiline = true;
             this.nameField.Name = "nameField";
             this.nameField.Size = new System.Drawing.Size(314, 27);

@@ -39,7 +39,7 @@ namespace Employee_Service
                 command.Parameters.Add("@CN", SqlDbType.NChar).Value = name;
                 command.Parameters.Add("@CS", SqlDbType.NChar).Value = surname;
                 command.Parameters.Add("@CPl", SqlDbType.NChar).Value = pesel;
-                command.Parameters.Add("@CP", SqlDbType.NChar).Value = password;
+                command.Parameters.Add("@CP", SqlDbType.Binary).Value = password;
                 adapter.SelectCommand = command;
             }
 

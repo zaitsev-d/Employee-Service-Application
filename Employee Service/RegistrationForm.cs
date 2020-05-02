@@ -63,7 +63,6 @@ namespace Service_Application
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {
-            AutorizationForm autorizationForm = new AutorizationForm();
             autorizationForm.Show();
 
             this.Close();
@@ -138,83 +137,35 @@ namespace Service_Application
         private bool FieldsNotNull(List<string> fields)
         {
             int counter = default;
+            List<TextBox> fieldsList = new List<TextBox>() { nameField, surnameField, birthDateField, peselField, countryField, cityField, postcodeField, phoneNumberField };
+            List<ComboBox> comboList = new List<ComboBox>() { comboBoxGender, comboBoxPosition };
+            List<Label> labelList = new List<Label>() { labelAge, label_IDCode };
 
-            if(nameField.Text == String.Empty)
+            foreach(var x in fieldsList)
             {
-                fields.Add("Name");
-                counter++;
+                if(x.Text == String.Empty)
+                {
+                    fields.Add(x.Name);
+                    counter++;
+                }
             }
 
-            if (surnameField.Text == String.Empty)
+            foreach (var y in comboList)
             {
-                fields.Add("Surname");
-                counter++;
+                if (y.SelectedItem == null)
+                {
+                    fields.Add(y.Name);
+                    counter++;
+                }
             }
 
-            if (birthDateField.Text == String.Empty)
+            foreach (var r in labelList)
             {
-                fields.Add("Birth Date");
-                counter++;
-            }
-
-            if (labelAge.Text == String.Empty)
-            {
-                fields.Add("Age");
-                counter++;
-            }
-
-            if (comboBoxGender.SelectedItem == null)
-            {
-                fields.Add("Gender");
-                counter++;
-            }
-
-            if (peselField.Text == String.Empty)
-            {
-                fields.Add("Pesel");
-                counter++;
-            }
-
-            if (countryField.Text == String.Empty)
-            {
-                fields.Add("Country");
-                counter++;
-            }
-
-            if (cityField.Text == String.Empty)
-            {
-                fields.Add("City");
-                counter++;
-            }
-
-            if (postcodeField.Text == String.Empty)
-            {
-                fields.Add("Postcode");
-                counter++;
-            }
-
-            if (cityField.Text == String.Empty)
-            {
-                fields.Add("City");
-                counter++;
-            }
-
-            if (phoneNumberField.Text == String.Empty)
-            {
-                fields.Add("Phone Number");
-                counter++;
-            }
-
-            if (label_IDCode.Text == String.Empty)
-            {
-                fields.Add("ID Code");
-                counter++;
-            }
-
-            if (comboBoxPosition.SelectedItem == null)
-            {
-                fields.Add("Position");
-                counter++;
+                if (r.Text == String.Empty)
+                {
+                    fields.Add(r.Name);
+                    counter++;
+                }
             }
 
             if (counter > 0) return false;

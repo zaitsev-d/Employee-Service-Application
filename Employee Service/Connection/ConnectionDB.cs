@@ -32,5 +32,10 @@ namespace Service_Application.Connection
         {
             return connectionDB;
         }
+
+        public async Task OpenConnectionAsync()
+        {
+            if (connectionDB.State == System.Data.ConnectionState.Closed) await connectionDB.OpenAsync();
+        }
     }
 }

@@ -62,13 +62,14 @@
             // 
             this.surnameField.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.surnameField.Location = new System.Drawing.Point(268, 81);
+            this.surnameField.MaxLength = 30;
             this.surnameField.Name = "surnameField";
             this.surnameField.Size = new System.Drawing.Size(197, 27);
             this.surnameField.TabIndex = 1;
             // 
             // buttonChange
             // 
-            this.buttonChange.Location = new System.Drawing.Point(342, 585);
+            this.buttonChange.Location = new System.Drawing.Point(342, 555);
             this.buttonChange.Name = "buttonChange";
             this.buttonChange.Size = new System.Drawing.Size(123, 36);
             this.buttonChange.TabIndex = 2;
@@ -78,7 +79,8 @@
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(11, 585);
+            this.buttonCancel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonCancel.Location = new System.Drawing.Point(13, 555);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(123, 36);
             this.buttonCancel.TabIndex = 3;
@@ -90,6 +92,7 @@
             // 
             this.birthDateField.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.birthDateField.Location = new System.Drawing.Point(12, 139);
+            this.birthDateField.MaxLength = 10;
             this.birthDateField.Name = "birthDateField";
             this.birthDateField.Size = new System.Drawing.Size(197, 27);
             this.birthDateField.TabIndex = 4;
@@ -109,6 +112,7 @@
             // 
             this.peselField.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.peselField.Location = new System.Drawing.Point(268, 197);
+            this.peselField.MaxLength = 11;
             this.peselField.Name = "peselField";
             this.peselField.Size = new System.Drawing.Size(197, 27);
             this.peselField.TabIndex = 9;
@@ -169,6 +173,7 @@
             // 
             this.countryField.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.countryField.Location = new System.Drawing.Point(12, 260);
+            this.countryField.MaxLength = 30;
             this.countryField.Name = "countryField";
             this.countryField.Size = new System.Drawing.Size(197, 27);
             this.countryField.TabIndex = 15;
@@ -187,6 +192,7 @@
             // 
             this.cityField.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cityField.Location = new System.Drawing.Point(268, 260);
+            this.cityField.MaxLength = 30;
             this.cityField.Name = "cityField";
             this.cityField.Size = new System.Drawing.Size(197, 27);
             this.cityField.TabIndex = 17;
@@ -205,6 +211,7 @@
             // 
             this.addressField.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addressField.Location = new System.Drawing.Point(12, 318);
+            this.addressField.MaxLength = 64;
             this.addressField.Name = "addressField";
             this.addressField.Size = new System.Drawing.Size(453, 27);
             this.addressField.TabIndex = 19;
@@ -303,6 +310,7 @@
             // 
             this.nameField.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameField.Location = new System.Drawing.Point(12, 81);
+            this.nameField.MaxLength = 30;
             this.nameField.Name = "nameField";
             this.nameField.Size = new System.Drawing.Size(197, 27);
             this.nameField.TabIndex = 29;
@@ -338,7 +346,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(478, 633);
+            this.ClientSize = new System.Drawing.Size(484, 633);
             this.ControlBox = false;
             this.Controls.Add(this.labelID);
             this.Controls.Add(this.label1);
@@ -368,6 +376,9 @@
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonChange);
             this.Controls.Add(this.surnameField);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "ChangeForm";
             this.ShowIcon = false;
             this.Text = "Change Form";

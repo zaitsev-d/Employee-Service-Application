@@ -18,6 +18,7 @@ namespace Service_Application
         private DateTime birthDate = default;
 
         public string temp_id = default;
+        ConnectionDB data_base = new ConnectionDB();
 
         public ChangeForm()
         {
@@ -26,7 +27,6 @@ namespace Service_Application
 
         private void ChangeForm_Load(object sender, EventArgs e)
         {
-            var data_base = new ConnectionDB();
             var listOfData = new List<string>();
             var listOfFields = new List<Control>() { labelID, nameField, surnameField, birthDateField, labelAge, genderCB, peselField, countryField, cityField, postcodeField,
                 phoneNumberField, addressField, companyNameComboBox, comboBoxPosition };
@@ -57,7 +57,9 @@ namespace Service_Application
                     }
                 }
 
-                for(int i = 0; i < listOfFields.Count; i++)
+                dataBaseReader.Close();
+
+                for (int i = 0; i < listOfFields.Count; i++)
                 {
                     if (listOfFields[i].Name == nameof(labelID)) listOfFields[i].Text = $"ID: {listOfData[i]}";
                     else if (listOfFields[i].Name == nameof(labelAge)) 

@@ -2,16 +2,13 @@
 using Service_Application.Connection;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
 using System.Globalization;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Threading;
+using SortOrder = System.Windows.Forms.SortOrder;
 
 namespace Service_Application
 {
@@ -19,6 +16,8 @@ namespace Service_Application
     {
         AutorizationForm autorizationForm = new AutorizationForm();
         ConnectionDB data_base = new ConnectionDB();
+
+        private ListViewItemComparer comparer = default;
 
         public MainForm()
         {
@@ -33,6 +32,9 @@ namespace Service_Application
         {
             labelDateTime.Text = $"{DateTime.Now.DayOfWeek}, {CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(DateTime.Now.Month)}  [ {DateTime.Now.ToShortDateString()} ]  {DateTime.Now.ToShortTimeString()}";
 
+            comparer = new ListViewItemComparer();
+            comparer.ColumnIndex = 0;
+
             listView1.Clear();
             await data_base.OpenConnectionAsync(); ListView();
             await LoadDataBaseAsync();
@@ -41,7 +43,7 @@ namespace Service_Application
         public async void Updt()
         {
             listView1.Clear();
-            await data_base.OpenConnectionAsync(); 
+            await data_base.OpenConnectionAsync();
             ListView();
             await LoadDataBaseAsync();
         }
@@ -150,7 +152,28 @@ namespace Service_Application
                 change.Show();
             }
             else MessageBox.Show("Please select a database item to modify it.", "FAIL", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            
+
+        }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DeleteForm delete = new DeleteForm();
+            delete.Owner = this;
+            if (listView1.SelectedItems.Count > 0)
+            {
+                delete.temp_id = listView1.SelectedItems[0].Text;
+                delete.Show();
+            }
+            else MessageBox.Show("Please select a database item to delete it.", "FAIL", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void listView1_ColumnClick(object sender, ColumnClickEventArgs e)
+        {
+            comparer.ColumnIndex = e.Column;
+            comparer.SortDirection = comparer.SortDirection == SortOrder.Ascending ? SortOrder.Descending : SortOrder.Ascending;
+
+            listView1.ListViewItemSorter = comparer;
+            listView1.Sort();
         }
     }
 }

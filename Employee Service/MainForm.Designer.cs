@@ -39,8 +39,6 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.listView1 = new System.Windows.Forms.ListView();
-            this.labelFilter = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,10 +47,24 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.labelDateTime = new System.Windows.Forms.Label();
+            this.lvCompanies = new System.Windows.Forms.ListView();
+            this.menuStrip3 = new System.Windows.Forms.MenuStrip();
+            this.addToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.incomeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.productivityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.employmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.violationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip4 = new System.Windows.Forms.MenuStrip();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.menuStrip2.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.menuStrip3.SuspendLayout();
+            this.menuStrip4.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -138,8 +150,6 @@
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.tabPage1.Controls.Add(this.listView1);
-            this.tabPage1.Controls.Add(this.labelFilter);
-            this.tabPage1.Controls.Add(this.textBox1);
             this.tabPage1.Controls.Add(this.menuStrip2);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
@@ -160,24 +170,7 @@
             this.listView1.Size = new System.Drawing.Size(768, 444);
             this.listView1.TabIndex = 4;
             this.listView1.UseCompatibleStateImageBehavior = false;
-            // 
-            // labelFilter
-            // 
-            this.labelFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelFilter.AutoSize = true;
-            this.labelFilter.Location = new System.Drawing.Point(561, 11);
-            this.labelFilter.Name = "labelFilter";
-            this.labelFilter.Size = new System.Drawing.Size(43, 17);
-            this.labelFilter.TabIndex = 3;
-            this.labelFilter.Text = "Filter:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(610, 8);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(152, 22);
-            this.textBox1.TabIndex = 2;
+            this.listView1.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.listView1_ColumnClick);
             // 
             // menuStrip2
             // 
@@ -212,20 +205,25 @@
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
             this.deleteToolStripMenuItem.Size = new System.Drawing.Size(67, 24);
             this.deleteToolStripMenuItem.Text = "Delete";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
             // tabPage4
             // 
+            this.tabPage4.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.tabPage4.Controls.Add(this.lvCompanies);
+            this.tabPage4.Controls.Add(this.menuStrip3);
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage4.Size = new System.Drawing.Size(768, 487);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "COMPANY REGISTER";
-            this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.tabPage2.Controls.Add(this.panel1);
+            this.tabPage2.Controls.Add(this.menuStrip4);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -250,12 +248,93 @@
             this.labelDateTime.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.labelDateTime.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labelDateTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDateTime.Location = new System.Drawing.Point(524, 10);
+            this.labelDateTime.Location = new System.Drawing.Point(523, 10);
             this.labelDateTime.Name = "labelDateTime";
             this.labelDateTime.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.labelDateTime.Size = new System.Drawing.Size(104, 18);
             this.labelDateTime.TabIndex = 2;
             this.labelDateTime.Text = "Date and Time";
+            // 
+            // lvCompanies
+            // 
+            this.lvCompanies.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.lvCompanies.HideSelection = false;
+            this.lvCompanies.Location = new System.Drawing.Point(0, 45);
+            this.lvCompanies.Name = "lvCompanies";
+            this.lvCompanies.Size = new System.Drawing.Size(768, 442);
+            this.lvCompanies.TabIndex = 0;
+            this.lvCompanies.UseCompatibleStateImageBehavior = false;
+            // 
+            // menuStrip3
+            // 
+            this.menuStrip3.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.menuStrip3.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addToolStripMenuItem1,
+            this.deleteToolStripMenuItem1});
+            this.menuStrip3.Location = new System.Drawing.Point(3, 3);
+            this.menuStrip3.Name = "menuStrip3";
+            this.menuStrip3.Size = new System.Drawing.Size(762, 28);
+            this.menuStrip3.TabIndex = 1;
+            this.menuStrip3.Text = "menuStrip3";
+            // 
+            // addToolStripMenuItem1
+            // 
+            this.addToolStripMenuItem1.Name = "addToolStripMenuItem1";
+            this.addToolStripMenuItem1.Size = new System.Drawing.Size(51, 24);
+            this.addToolStripMenuItem1.Text = "Add";
+            // 
+            // deleteToolStripMenuItem1
+            // 
+            this.deleteToolStripMenuItem1.Name = "deleteToolStripMenuItem1";
+            this.deleteToolStripMenuItem1.Size = new System.Drawing.Size(67, 24);
+            this.deleteToolStripMenuItem1.Text = "Delete";
+            // 
+            // incomeToolStripMenuItem
+            // 
+            this.incomeToolStripMenuItem.Name = "incomeToolStripMenuItem";
+            this.incomeToolStripMenuItem.Size = new System.Drawing.Size(72, 24);
+            this.incomeToolStripMenuItem.Text = "Income";
+            // 
+            // productivityToolStripMenuItem
+            // 
+            this.productivityToolStripMenuItem.Name = "productivityToolStripMenuItem";
+            this.productivityToolStripMenuItem.Size = new System.Drawing.Size(101, 24);
+            this.productivityToolStripMenuItem.Text = "Productivity";
+            // 
+            // employmentToolStripMenuItem
+            // 
+            this.employmentToolStripMenuItem.Name = "employmentToolStripMenuItem";
+            this.employmentToolStripMenuItem.Size = new System.Drawing.Size(107, 24);
+            this.employmentToolStripMenuItem.Text = "Employment";
+            // 
+            // violationsToolStripMenuItem
+            // 
+            this.violationsToolStripMenuItem.Name = "violationsToolStripMenuItem";
+            this.violationsToolStripMenuItem.Size = new System.Drawing.Size(89, 24);
+            this.violationsToolStripMenuItem.Text = "Violations";
+            // 
+            // menuStrip4
+            // 
+            this.menuStrip4.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.menuStrip4.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip4.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.incomeToolStripMenuItem,
+            this.productivityToolStripMenuItem,
+            this.employmentToolStripMenuItem,
+            this.violationsToolStripMenuItem});
+            this.menuStrip4.Location = new System.Drawing.Point(3, 3);
+            this.menuStrip4.Name = "menuStrip4";
+            this.menuStrip4.Size = new System.Drawing.Size(762, 28);
+            this.menuStrip4.TabIndex = 0;
+            this.menuStrip4.Text = "menuStrip4";
+            // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(0, 47);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(768, 440);
+            this.panel1.TabIndex = 1;
             // 
             // MainForm
             // 
@@ -279,6 +358,14 @@
             this.tabPage1.PerformLayout();
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            this.menuStrip3.ResumeLayout(false);
+            this.menuStrip3.PerformLayout();
+            this.menuStrip4.ResumeLayout(false);
+            this.menuStrip4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -301,11 +388,19 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem phonebookToolStripMenuItem;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label labelFilter;
         private System.Windows.Forms.ToolStripMenuItem informationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem languageToolStripMenuItem;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.ListView lvCompanies;
+        private System.Windows.Forms.MenuStrip menuStrip3;
+        private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.MenuStrip menuStrip4;
+        private System.Windows.Forms.ToolStripMenuItem incomeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem productivityToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem employmentToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem violationsToolStripMenuItem;
     }
 }
